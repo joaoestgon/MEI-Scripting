@@ -27,3 +27,17 @@ Instalação: pode ser feita via pip, conda ou github source code.
 * Stanza é construído com base em redes neuronais, permitindo avaliação eficiente dos próprios dados anotados.
 
 Os Stanzas são muito utilizados para organizar poesia. Nomeadamente para refletir sobre a intenção de um poeta, o humor e ritmo do poema, ou os vários temas e personagens em acção dentro do poema. 
+
+
+## Como utilizar?
+Para começar as anotações com Stanza, é necessário inicializar um Pipeline que contém o processador que permite satisfazer as tarefas que desejamos.
+Isso é feito da seguinte forma:
+
+``` 
+import stanza 
+
+stanza.download('en')       # Faz download dos modelos em Ingles para o pipeline
+nlp = stanza.Pipeline('en', processors='tokenize,pos', use_gpu=True, pos_batch_size=3000) # Constrói o pipeline, com processo de tokenização, utilização de gpu e no máximo 3000 palavras
+doc = nlp("Scripting is a cool subject") # Corre o pipeline com o texto dado
+print(doc) 
+```
