@@ -26,4 +26,4 @@ Instalação: pode ser feita via pip, conda ou github source code.
 
 * Stanza é construído com base em redes neuronais, permitindo avaliação eficiente dos próprios dados anotados.
 
-Traduzido com a versão gratuita do tradutor - www.DeepL.com/Translator
+Os Stanzas são muito utilizados para organizar poesia. Nomeadamente para refletir sobre a intenção de um poeta, o humor e ritmo do poema, ou os vários temas e personagens em acção dentro do poema. 
