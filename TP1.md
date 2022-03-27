@@ -62,10 +62,10 @@ config = {
 }
 nlp = stanza.Pipeline(**config) # Initialize the pipeline using a configuration dict
 doc = nlp("Van Gogh grandit au sein d'une famille de l'ancienne bourgeoisie .") # Run the pipeline on the pretokenized input text
-print(doc) # Look at the result ```
+print(doc) # Look at the result 
 
-* 
-```
+
+
 import stanza
 nlp = stanza.Pipeline(lang="en") # Initialize the default English pipeline
 documents = ["This is a test document.", "I wrote another document for fun."] # Documents that we are going to process
