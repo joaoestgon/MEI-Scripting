@@ -41,3 +41,35 @@ nlp = stanza.Pipeline('en', processors='tokenize,pos', use_gpu=True, pos_batch_s
 doc = nlp("Scripting is a cool subject") # Corre o pipeline com o texto dado
 print(doc) 
 ```
+
+Um pipeline também pode ser inicializado com um dicionário ou listas de documentos.
+
+```import stanza
+
+config = {
+        # Comma-separated list of processors to use
+	'processors': 'tokenize,mwt,pos',
+        # Language code for the language to build the Pipeline in
+        'lang': 'fr',
+        # Processor-specific arguments are set with keys "{processor_name}_{argument_name}"
+        # You only need model paths if you have a specific model outside of stanza_resources
+	'tokenize_model_path': './fr_gsd_models/fr_gsd_tokenizer.pt',
+	'mwt_model_path': './fr_gsd_models/fr_gsd_mwt_expander.pt',
+	'pos_model_path': './fr_gsd_models/fr_gsd_tagger.pt',
+	'pos_pretrain_path': './fr_gsd_models/fr_gsd.pretrain.pt',
+        # Use pretokenized text as input and disable tokenization
+	'tokenize_pretokenized': True
+}
+nlp = stanza.Pipeline(**config) # Initialize the pipeline using a configuration dict
+doc = nlp("Van Gogh grandit au sein d'une famille de l'ancienne bourgeoisie .") # Run the pipeline on the pretokenized input text
+print(doc) # Look at the result```
+
+* ```
+import stanza
+nlp = stanza.Pipeline(lang="en") # Initialize the default English pipeline
+documents = ["This is a test document.", "I wrote another document for fun."] # Documents that we are going to process
+in_docs = [stanza.Document([], text=d) for d in documents] # Wrap each document with a stanza.Document object
+out_docs = nlp(in_docs) # Call the neural pipeline on this list of documents
+print(out_docs[1]) # The output is also a list of stanza.Document objects, each output corresponding to an input Document object```
+
+https://stanfordnlp.github.io/stanza/pipeline.html#pipeline
