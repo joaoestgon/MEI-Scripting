@@ -44,7 +44,7 @@ print(doc)
 
 Um pipeline também pode ser inicializado com um dicionário ou listas de documentos.
 
-```import stanza
+``` import stanza
 
 config = {
         # Comma-separated list of processors to use
@@ -62,14 +62,15 @@ config = {
 }
 nlp = stanza.Pipeline(**config) # Initialize the pipeline using a configuration dict
 doc = nlp("Van Gogh grandit au sein d'une famille de l'ancienne bourgeoisie .") # Run the pipeline on the pretokenized input text
-print(doc) # Look at the result```
+print(doc) # Look at the result ```
 
-* ```
+* 
+```
 import stanza
 nlp = stanza.Pipeline(lang="en") # Initialize the default English pipeline
 documents = ["This is a test document.", "I wrote another document for fun."] # Documents that we are going to process
 in_docs = [stanza.Document([], text=d) for d in documents] # Wrap each document with a stanza.Document object
 out_docs = nlp(in_docs) # Call the neural pipeline on this list of documents
-print(out_docs[1]) # The output is also a list of stanza.Document objects, each output corresponding to an input Document object```
+print(out_docs[1]) # The output is also a list of stanza.Document objects, each output corresponding to an input Document object ```
 
 https://stanfordnlp.github.io/stanza/pipeline.html#pipeline
