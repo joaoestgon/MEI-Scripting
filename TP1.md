@@ -1,10 +1,8 @@
 # Stanza
 
-Instalação: pode ser feita via pip, conda ou github source code.
-
-
 ## O que é Stanza? 
-* Santza é uma coleção de ferramentas Python utilizadas na análise linguística de linguagem humana.
+
+* Stanza é uma coleção de ferramentas Python utilizadas na análise linguística de linguagem humana.
 
 * Desde texto em bruto até análise sintática e reconhecimento de entidades, Stanza tem modelos de PNL de última geração para diversas linguagens.
 
@@ -16,9 +14,36 @@ Instalação: pode ser feita via pip, conda ou github source code.
 
 Os Stanzas são muito utilizados para organizar poesia. Nomeadamente para refletir sobre a intenção de um poeta, o humor e ritmo do poema, ou os vários temas e personagens em acção dentro do poema. 
 
+Investigadores na área esperam conseguir, através da Stanza, aplicações e pesquisas NLP multi linguísticas, que tragam novos conhecimentos acerca das mais diversas línguas humanas.
+
 ## Instalação
 
+### pip
+
+```pip install stanza```
+
+### conda
+
+```conda install -c stanfordnlp stanza```
+
+### github source code
+
+```
+git clone https://github.com/stanfordnlp/stanza.git
+cd stanza
+pip install -e
+```
+
+## Limitações
+
+* Os modelos Stanza disponíveis para download foram treinados num único dataset, pelo que a sua robustez deve ser verificada com dados diferentes.
+
+* A biblioteca Stanza está otimizada para precisão dos resultados, podendo por vezes computacionalmente pouco eficiente.
+
+* Outras técnicas de NLP devem ser utilizdas em conjunto com a Stanza para análises de texto mais completas.
+
 ## Como utilizar?
+
 Para começar as anotações com Stanza, é necessário inicializar um Pipeline que contém o processador que permite satisfazer as tarefas que desejamos.
 Isso é feito da seguinte forma:
 
@@ -60,11 +85,12 @@ nlp = stanza.Pipeline(lang="en") # Initialize the default English pipeline
 documents = ["This is a test document.", "I wrote another document for fun."] # Documents that we are going to process
 in_docs = [stanza.Document([], text=d) for d in documents] # Wrap each document with a stanza.Document object
 out_docs = nlp(in_docs) # Call the neural pipeline on this list of documents
-print(out_docs[1]) # The output is also a list of stanza.Document objects, each output corresponding to an input Document object ```
+print(out_docs[1]) # The output is also a list of stanza.Document objects, each output corresponding to an input Document object 
+```
+
+
 
 https://stanfordnlp.github.io/stanza/pipeline.html#pipeline
-
-
 
 
 ## Bibliografia
