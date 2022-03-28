@@ -36,11 +36,11 @@ pip install -e
 
 ## Limitações
 
-* Os modelos Stanza disponíveis para download foram treinados num único dataset, pelo que a sua robustez deve ser verificada com dados diferentes.
+* Os modelos Stanza disponíveis para download foram treinados num único dataset, pelo que a sua robustez deve ser verificada com dados de fontes alternativas.
 
-* A biblioteca Stanza está otimizada para precisão dos resultados, podendo por vezes computacionalmente pouco eficiente.
+* A biblioteca Stanza está otimizada para precisão dos resultados, podendo por vezes ser computacionalmente pouco eficiente.
 
-* Outras técnicas de NLP devem ser utilizdas em conjunto com a Stanza para análises de texto mais completas.
+* Outras técnicas de NLP devem ser utilizdas em conjunto com a Stanza, de modo a obter análises de textos mais completas.
 
 ## Como utilizar?
 
