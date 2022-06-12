@@ -2,7 +2,7 @@
 2 -> Identificar os tópicos
 3 -> atribuir um valor a cada tópico
 
--Emoções:
+-Emoções: [-1, 0, 1]
 	- Positivas
 	- Neutras
 	- Negativas
