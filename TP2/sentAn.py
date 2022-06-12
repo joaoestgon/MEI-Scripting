@@ -33,3 +33,9 @@ goodp = len(good)
 nep = len(news) - (badp + goodp)
 print('Scraped headlines: '+ str(len(news)))
 print('Headlines with negative sentiment: ' + str(badp) + '\nHeadlines with positive sentiment: ' + str(goodp) + '\nHeadlines with neutral sentiment: ' + str(nep))
+
+finalAnal = (badp * -1 + goodp * 1 )/(badp+goodp+nep)
+
+print("Média de sentimentos das notícias: ", finalAnal)
+
+
