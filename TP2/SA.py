@@ -1,10 +1,14 @@
 
 from cmath import exp
+from netrc import NetrcParseError
 import requests
 import pandas
 from bs4 import BeautifulSoup
 import numpy as np
 import re
+import matplotlib.pyplot as plt
+
+
 
 general ={}
 
@@ -79,17 +83,58 @@ def catch_words(original, new_sentence):
                 general[original][sent]= [wordS[i]]
     return new_sentence  
 
+def diagram():
+    pos = 0
+    neg= 0
+    net = 0
+    for entry in general:
+        if general[entry]['total'] == 'POSITIVO':
+            pos += 1
+        elif general[entry]['total'] == 'NEGATIVO':
+            neg += 1
+        elif general[entry]['total'] == 'NEUTRO':
+            net += 1
+
+
+
+# Pie chart, where the slices will be ordered 
+# and plotted counter-clockwise:
+    labels = 'Positivo', 'Negativo', 'Neutro'
+    sizes = [pos, neg, net]
+
+    distance = 0.2
+    separate = (distance, distance, distance)
+    plt.figure()
+    plt.pie(sizes, labels=labels, explode=separate, autopct='%1.1f%%')
+    # Equal aspect ratio ensures that 
+    # pie is drawn as a circle.
+    plt.axis('equal')  
+    plt.title('Análise de Sentimentos das Notícias do dia')
+    plt.show()
+
+
 def process_Sentiment():
     for entry in general:
+
         total = sum(int(v) for v in general[entry]['bom']) + sum(int(v) for v in general[entry]['neutro']) + sum(int(v) for v in general[entry]['mau'])
-        total_mean = total/ (len(general[entry]['bom']+general[entry]['neutro']+general[entry]['mau']))
+        total_sents = (len(general[entry]['bom']+general[entry]['neutro']+general[entry]['mau']))
+        total_mean = 0
+        pos=0
+        neg=0
+        neut = 0
+        if total_sents> 0 :
+            total_mean = total/ total_sents
+            pos +=1
         if total_mean < 0:
             SENT = 'NEGATIVO'
+            neg+=1
         elif total_mean >0:
             SENT = 'POSITIVO'
+            neut+=1
         elif total_mean== 0:
             SENT ='NEUTRO'
-        print(f'Para a frase: \n"{entry}"\n o sentimento geral associado é {total}, com uma média de {total_mean}, ou seja, {SENT}.\n\n')
+        general[entry]['total'] = SENT
+        print(f'Para o Título: \n\t"{entry}"\n O sentimento geral associado é {total}, com uma média de {total_mean}, ou seja, {SENT}.\n\n')
 
 def analyseSents():
     url='https://www.publico.pt/online'
@@ -97,45 +142,18 @@ def analyseSents():
 
     soup = BeautifulSoup(response.text, 'html.parser')
     #Retirar todas as headlines do site para analisar os sentimentos
-    #headlines = soup.find('body').find_all('h4', 'headline')
-    headlines = ['isto é um ponto forte muito lindo, vamos testar outro ponto forte', 'isto é outro ponto fraco', 'que deixa muito a desejar', 'que coisa muito linda']
+    headlines = soup.find('body').find_all('h4', 'headline')
+    #headlines = ['isto é um ponto forte muito lindo, vamos testar outro ponto forte', 'isto é outro ponto fraco', 'que deixa muito a desejar', 'que coisa muito linda']
 
     for x in headlines: 
-        x = x.strip()
-        general[x] = {'bom': [], 'mau': [], 'neutro': []}
+        x = x.text.strip()
+        general[x] = {'bom': [], 'mau': [], 'neutro': [], 'total': ''}
         #x.text.strip()
         x1 = catch_expressions(x)
         x2 = catch_mult(x, x1)
         x3 = catch_words(x, x2)
 
     process_Sentiment()
+    diagram()
 
 analyseSents() 
-'''
-unwanted = ['BBC World News TV', 'BBC World Service Radio', 'News daily newsletter', 'Mobile app', 'Get in touch']
-news = []
-neutral = []
-bad = []
-good = []
-for x in headlines:
-    if x.text.strip() not in unwanted and x.text.strip() not in news:
-        news.append(x.text.strip())
-        for i in range(len(df['n'])):
-            if sen[i] in x.text.strip().lower():
-                if cat[i] == 0:
-                    bad.append(x.text.strip().lower())
-                else:
-                    good.append(x.text.strip().lower())
-
-badp = len(bad)
-goodp = len(good)
-nep = len(news) - (badp + goodp)
-print('Scraped headlines: '+ str(len(news)))
-print('Headlines with negative sentiment: ' + str(badp) + '\nHeadlines with positive sentiment: ' + str(goodp) + '\nHeadlines with neutral sentiment: ' + str(nep))
-
-finalAnal = (badp * -1 + goodp * 1 )/(badp+goodp+nep)
-
-print("Média de sentimentos das notícias: ", finalAnal)
-
-
-'''
