@@ -1,12 +1,14 @@
-deixa muito a desejar,-2
-alcança as expectativas,2
-não alcança as expectativas,-2
-ponto forte,2
-ponto fraco,-2
+word,sentiment
+deixa muito a desejar,-1
+alcança as expectativas,1
+não alcança as expectativas,-1
+ponto forte,1
+ponto fraco,-1
 por pouco,-1
 por muito,1
 alta capacidade,1
 baixa capacidade,-1
-muito poder,2
-pouco poder,2
+muito poder,1
+pouco poder,1
+bem-estar,1
 

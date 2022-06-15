@@ -1,28 +1,39 @@
 
 from cmath import exp
 from netrc import NetrcParseError
-import requests
-import pandas
+#import requests
+import pandas as pd
 from bs4 import BeautifulSoup
-import numpy as np
 import re
 import matplotlib.pyplot as plt
-
-
+import sys
+import spacy
+import nltk
+load_model = spacy.load("pt_core_news_sm", disable = ['parser','ner'])
+all_stopwords =  nltk.corpus.stopwords.words("portuguese")
 
 general ={}
 
-df_exp = pandas.read_csv('expressions.csv')
+df_exp = pd.read_csv('exp.csv')
 expW = df_exp['word']
 expS = df_exp['sentiment']
 
-df_mult = pandas.read_csv('multip.csv')
+df_mult = pd.read_csv('mult.csv')
 multW = df_mult['word']
 multS = df_mult['sentiment']
 
-df_words = pandas.read_csv('words.csv')
+
+'''
+#Transformar o dataset num csv
+dataframe1 = pd.read_csv("SentiLex.txt", delimiter=';') 
+dataframe1.to_csv('SentiLex.csv', 
+                  index = None, header=['word', 'sent'])'''
+
+df_words = pd.read_csv("SentiLex.csv")
 wordW = df_words['word']
-wordS = df_words['sentiment']
+wordS = df_words['sent']
+
+
 
 #Função que, sabendo o dataset, extrai o tipo de sentimento associado
 #0 - expressões, 1 - , 2 - palavras
@@ -40,7 +51,7 @@ def getSentiment(position, type):
     else:
         return 'neutro'
 
-def catch_expressions(sentence):
+def catch_expressions(original, sentence):
     new_sentence = sentence
     for i in range(len(df_exp)):
         ans = re.findall(expW[i], sentence)
@@ -50,24 +61,28 @@ def catch_expressions(sentence):
                 #obter o tipo de sentimento em função do valor
                 sent = getSentiment(i, 0)
                 #adicionar ao neg, pos ou neutro
-                if sentence in general:
-                    general[sentence][sent].append(expS[i])
+                if original in general:
+                    general[original][sent].append(expS[i])
                 else:
-                    general[sentence][sent]= [expS[i]]
+                    general[original][sent]= [expS[i]]
     return new_sentence    
 
 
 def catch_mult(original, new_sentence):
     for i in range(len(df_mult)):
-        ans = re.findall(multW[i]+r'\s\w+', new_sentence)
-        for an in ans:
-            new_sentence = new_sentence.replace(an, '')
-            sent = getSentiment(i, 1)
-                #adicionar ao neg, pos ou neutro
-            if original in general:
-                general[original][sent].append(multS[i])
-            else:
-                general[original][sent]= [multS[i]]
+        word_comp = re.findall(multW[i]+r'\s(\w+)', new_sentence)
+        for an in word_comp:
+            for j in range(len(df_words)):
+                if an == wordW[j]:
+                    new_sentence = new_sentence.replace(multW[i] + ' ' +an, '')
+                    sent = getSentiment(i, 1)
+                        #adicionar ao neg, pos ou neutro
+                    if original in general:
+                        general[original][sent].append(multS[i]*wordS[j])
+                    else:
+                        general[original][sent]= [multS[i]*wordS[j]]
+
+                    break
     return new_sentence    
 
 def catch_words(original, new_sentence):
@@ -115,7 +130,6 @@ def diagram():
 
 def process_Sentiment():
     for entry in general:
-
         total = sum(int(v) for v in general[entry]['bom']) + sum(int(v) for v in general[entry]['neutro']) + sum(int(v) for v in general[entry]['mau'])
         total_sents = (len(general[entry]['bom']+general[entry]['neutro']+general[entry]['mau']))
         total_mean = 0
@@ -134,26 +148,49 @@ def process_Sentiment():
         elif total_mean== 0:
             SENT ='NEUTRO'
         general[entry]['total'] = SENT
-        print(f'Para o Título: \n\t"{entry}"\n O sentimento geral associado é {total}, com uma média de {total_mean}, ou seja, {SENT}.\n\n')
+        print(f' 📜 → Para o Título: \n\t"{entry}"\n O sentimento geral associado é {total}, com uma média de {total_mean}, ou seja, {SENT}.\n\n')
 
-def analyseSents():
-    url='https://www.publico.pt/online'
-    response = requests.get(url)
+def tolistString(blocks):
+    b = []
+    x = blocks.replace(r'\[|\]', '')
+    res = re.findall(r'\'[^\']+\'\,?', x)
+    for r in res:
+        r = re.sub(r'\'\,|\'', '', r)
+        b.append(r)
+    return b
 
-    soup = BeautifulSoup(response.text, 'html.parser')
-    #Retirar todas as headlines do site para analisar os sentimentos
-    headlines = soup.find('body').find_all('h4', 'headline')
-    #headlines = ['isto é um ponto forte muito lindo, vamos testar outro ponto forte', 'isto é outro ponto fraco', 'que deixa muito a desejar', 'que coisa muito linda']
 
-    for x in headlines: 
-        x = x.text.strip()
+def lemmatization(texto):
+    doc = load_model(texto)
+    return(" ".join([token.lemma_ for token in doc]))
+
+
+def remove_mystopwords(text):
+    #fazer a tokenização por frases, para ser mais fácil
+    f = nltk.sent_tokenize(text)
+    tokens_filtered = []
+    for sent in f:
+        tokens = sent.split(" ")
+        tokens_filtered += [word for word in tokens if not word in all_stopwords]
+    return (" ").join(tokens_filtered)
+
+
+def analyseSents(file):
+    content = open(file, 'r').read()
+    blocks = tolistString(content)
+    for x in blocks: 
         general[x] = {'bom': [], 'mau': [], 'neutro': [], 'total': ''}
         #x.text.strip()
-        x1 = catch_expressions(x)
+        x_lem = lemmatization(x)
+        x1 = catch_expressions(x, x_lem)
         x2 = catch_mult(x, x1)
-        x3 = catch_words(x, x2)
-
+        x_WS = remove_mystopwords(x2)
+        x3 = catch_words(x, x_WS)
+ 
     process_Sentiment()
-    diagram()
+    '''
+    diagram()'''
 
-analyseSents() 
+analyseSents(sys.argv[1]) 
+
+
