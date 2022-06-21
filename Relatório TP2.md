@@ -1,4 +1,4 @@
-# Sentiment Analysis
+# Tema 2 - Sentiment Analysis
 
 ## O que é Sentiment Analysis? 
 
