@@ -23,7 +23,7 @@ Começamos por definir os 3 principais tipos de sentimentos: bom, mau e neutro. 
 
 De seguida, ciramos um dataset adicional com palavras que classificamos como 'MULTIPLICADORAS' (ex.: muito, pouco, ...), visto que estas palavras aumentam ou diminuem o valor do sentimento da palavra que as procede.
 
-** Fórmula: [Valor da Palavra Multiplicadora] x [Sentimento da Palavra] **
+**Fórmula:** [Valor da Palavra Multiplicadora] x [Sentimento da Palavra]
 
 Como existem expressões cujas palavras individualmente possuem um sentimento diferente de quando estão combinadas numa mesma frase. Por isso, dividimos o dataset de modo a ter um dataset apenas para expressões e outro com todas as palavras individuais do SentiLex.
 De modo a proceder a esta divisão, foram empregados os conhecimentos adquiridos na UC de SPLN, para desenvolver um script que faça essa divisão, visto que manualmente implicaria percorrer todas as entradas do SentiLex, procurar as expressões removê-las e colocá-las noutro dataset.
