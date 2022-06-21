@@ -127,8 +127,8 @@ def diagram():
 
 def process_Sentiment():
     for entry in general:
-        total = sum(int(v) for v in general[entry]['bom']) + sum(int(v) for v in general[entry]['mau'])
-        total_sents = (len(general[entry]['bom']+general[entry]['neutro']+general[entry]['mau']))
+        total = sum(float(v) for v in general[entry]['bom']) + sum(float(v) for v in general[entry]['mau'])
+        total_sents = (len(general[entry]['bom']) +len(general[entry]['neutro'])+ len(general[entry]['mau']))
         total_mean = 0
         pos=0
         neg=0
@@ -145,7 +145,8 @@ def process_Sentiment():
         elif total_mean== 0:
             SENT ='NEUTRO'
         general[entry]['total'] = SENT
-        print(f' 📜 → Para o Título: \n\t"{entry}"\n O sentimento geral associado é {total}, com uma média de {total_mean}, ou seja, {SENT}.\n\n')
+        general[entry]['valor'] = total_sents
+        print(f' 📜 → Para o Título: \n\t"{entry}"\n O sentimento total associado é {total_mean}, ou seja, {SENT}.\n\n')
 
 def tolistString(blocks):
     b = []
@@ -175,24 +176,41 @@ def remove_mystopwords(text):
 def analyseSents(file):
     content = open(file, 'r').read()
     blocks = tolistString(content)
-    print(blocks)
     for x in blocks: 
-        general[x] = {'bom': [], 'mau': [], 'neutro': [], 'total': ''}
+        general[x] = {'bom': [], 'mau': [], 'neutro': [], 'total': '', 'valor': 0.0}
         #x.text.strip()
         x_lem = lemmatization(x)
         x1 = catch_expressions(x, x_lem)
-        print(x1)
         x2 = catch_mult(x, x1)
-        print(x2)
         x_WS = remove_mystopwords(x2)
-        print(x_WS)
         x3 = catch_words(x, x_WS)
- 
-    process_Sentiment()
-    print(general)
+    
+    return blocks
+    
     '''
     diagram()'''
 
-analyseSents(sys.argv[1]) 
+blocksFile = analyseSents(sys.argv[1]) 
 
+process_Sentiment()
 
+def viewComparacao():
+    comp = input("Pretende efetuar a comparação de resultados?\n 0 - Não; 1 - Sim\n ")
+    if comp == '1':
+        ficheiroComp = input("Introduza o nome do ficheiro de comparação:  \n")
+        dataframe1 = pd.read_csv(ficheiroComp, delimiter='|') 
+        dataframe1.to_csv('comparacao.csv', index = None, header=['frase', 'sentimento'])
+        df_words = pd.read_csv('comparacao.csv')
+        frase = df_words['frase']
+        sentimento = df_words['sentimento']
+        print(frase[0])
+        print(sentimento[0])
+        for i in range(len(df_words)):
+            if frase[i] in general:
+                if (sentimento[i] ==general[frase[i]]['total'] ):
+                    print("\n 📝 Frase:\n\"", frase[i], "\"\n ➡️ Esperado: "+ sentimento[i]  + "\t↪️ Obtido: " + general[frase[i]]['total'] + " ✅" )
+                else:
+                    print("\n 📝 Frase:\n\"", frase[i], "\"\n ➡️ Esperado: "+ sentimento[i]  + "\t↪️ Obtido: " + general[frase[i]]['total'] + " ❌")
+        
+
+viewComparacao()
