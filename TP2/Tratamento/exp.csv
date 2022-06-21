@@ -1,0 +1,855 @@
+word,sentiment
+deixa muito a desejar,-1
+alcança as expectativas,1
+não alcança as expectativas,-1
+ponto forte,1
+ponto fraco,-1
+por pouco,-1
+por muito,1
+alta capacidade,1
+baixa capacidade,-1
+muito poder,1
+pouco poder,1
+bem-estar,1
+magia negra,-1
+abrir a alma,1
+abrir o coração,1
+abrir os olhos,1
+acertar na mosca,1
+acertar na mouche,1
+achar piada a,0
+acordar com o rabo para o ar,-1
+acordar com os pés de fora,-1
+afogar as mágoas,-1
+afogar-se em pouca água,-1
+agarrar a oportunidade com unhas e dentes,1
+agarrar a oportunidade,1
+agarrar o touro pelos cornos,1
+agarrar-se ao poder,-1
+agir de boa-fé,1
+agir de má-fé,-1
+alienação mental,-1
+amigo da onça,-1
+amigo da pinga,-1
+amigo dos copos,-1
+andar a apanhar bonés,-1
+andar à deriva,-1
+andar a dormir à sombra da bananeira,-1
+andar a dormir,-1
+andar a falar sozinho,-1
+andar à nora,-1
+andar a pensar na morte da bezerra,-1
+andar a reboque de,-1
+andar à sombra da bananeira,-1
+andar ao deus dará,-1
+andar aos bonés,-1
+andar aos caídos,-1
+andar aos papéis,-1
+andar armado em carapau de corrida,-1
+andar às aranhas,-1
+andar às cavalitas de,-1
+andar às cegas,-1
+andar às turras com,-1
+andar com a cabeça na lua,-1
+andar com cara de caso,-1
+andar com dor de corno,-1
+andar com dor de cotovelo,-1
+andar com macacos na cabeça,-1
+andar com macacos no sótão,-1
+andar com macaquinhos na cabeça,-1
+andar com macaquinhos no sótão,-1
+andar com o coração nas mãos,-1
+andar com os azeites,-1
+andar de olhos vendados,-1
+andar de trombas,-1
+andar em pele e osso,-1
+andar feito barata tonta,-1
+andar feito com,-1
+andar na boa vida,-1
+andar na lua,-1
+andar na má vida,-1
+andar nas sete quintas,1
+andar pelos cabelos,-1
+animal político,1
+anorexia nervosa,-1
+apanhar nas orelhas,-1
+apanhar por tabela,-1
+aplicar golpes baixos a,-1
+apresentar alternativas,1
+apresentar resultados,1
+apunhalar pelas costas,-1
+armar-se aos cágados,-1
+armar-se aos cucos,-1
+armar-se em carapau de corrida,-1
+armar-se em chico esperto,-1
+armar-se em parvo,-1
+arranjar lenha para se queimar,-1
+arranjar sarna para se coçar,-1
+arranjar um bico de obra,-1
+armar barraca,-1
+arrumar a um canto,1
+arrumar as botas,-1
+assédio sexual,-1
+atirar areia para os olhos de,-1
+atirar barro à parede,-1
+atirar com as culpas a,-1
+atirar poeira aos olhos de,-1
+atrasado mental,-1
+atraso mental,-1
+baço para espelho,-1
+
+
+acordar com o rabo para o ar,-1
+acordar com os pés de fora,-1
+afogar as mágoas,-1
+afogar-se em pouca água,-1
+agarrar a oportunidade com unhas e dentes,1
+agarrar a oportunidade,1
+agarrar o touro pelos cornos,1
+agarrar-se ao poder,-1
+agir de boa-fé,1
+agir de má-fé,-1
+aguentar-se bem,1
+alienação mental,-1
+amigo da onça,-1
+amigo da pinga,-1
+amigo dos copos,-1
+andar a apanhar bonés,-1
+andar à deriva,-1
+andar a dormir à sombra da bananeira,-1
+andar a dormir,-1
+andar a falar sozinho,-1
+andar à nora,-1
+andar a pensar na morte da bezerra,-1
+andar a reboque de,-1
+andar à sombra da bananeira,-1
+andar ao deus dará,-1
+andar aos bonés,-1
+andar aos caídos,-1
+andar aos papéis,-1
+andar armado em carapau de corrida,-1
+andar às aranhas,-1
+andar às cavalitas de,-1
+andar às cegas,-1
+andar às turras com,-1
+andar com a cabeça na lua,-1
+andar com cara de caso,-1
+andar com dor de corno,-1
+andar com dor de cotovelo,-1
+andar com macacos na cabeça,-1
+andar com macacos no sótão,-1
+andar com macaquinhos na cabeça,-1
+andar com macaquinhos no sótão,-1
+andar com o coração nas mãos,-1
+andar com os azeites,-1
+andar de olhos vendados,-1
+andar de trombas,-1
+andar em pele e osso,-1
+andar feito barata tonta,-1
+andar feito com,-1
+andar na boa vida,-1
+andar na lua,-1
+andar na má vida,-1
+andar nas sete quintas,1
+andar pelos cabelos,-1
+animal político,1
+anorexia nervosa,-1
+apanhar nas orelhas,-1
+apanhar por tabela,-1
+aplicar golpes baixos a,-1
+apresentar alternativas,1
+apresentar resultados,1
+apunhalar pelas costas,-1
+armar barraca,-1
+armar-se aos cágados,-1
+armar-se aos cucos,-1
+armar-se em carapau de corrida,-1
+armar-se em chico esperto,-1
+armar-se em parvo,-1
+arranjar lenha para se queimar,-1
+arranjar sarna para se coçar,-1
+arranjar um bico de obra,-1
+arrumar a um canto,1
+arrumar as botas,-1
+assédio sexual,-1
+atirar areia para os olhos de,-1
+atirar barro à parede,-1
+atirar com as culpas a,-1
+atirar poeira aos olhos de,-1
+atrasado mental,-1
+atraso mental,-1
+baço para espelho,-1
+bater a bota,-1
+bater as botas,-1
+bater com o nariz na porta,-1
+bater no ceguinho,-1
+bater no fundo,-1
+bem ataviado,0
+bem constituído,0
+bem disposto,1
+bem mandado,-1
+bem vestido,1
+boa apresentação,1
+boa criação,1
+boa disposição,1
+boa educação,1
+boa formação,1
+boa parecença,1
+boa performance,1
+boas intenções,1
+bom aluno,1
+bom cheiro,1
+bom comportamento,1
+bom desempenho,1
+bom humor,1
+cabeça dura,-1
+cair na armadilha,-1
+cair na boca do lobo,-1
+cair na ratoeira,-1
+cair por terra,-1
+calar a boca,-1
+calar o bico,-1
+cantar bem mas não me alegra,-1
+cantar de galo,-1
+cantar vitória antes do tempo,-1
+captar eleitorado,1
+cara de cu,-1
+cara de pau,-1
+certo nas contas,1
+chamar nomes a,0
+chamar os bois pelos nomes,1
+cheio de nove horas,-1
+cheirar a mofo,-1
+chico esperto,-1
+chorar sobre o leite derramado,-1
+colocar o dedo na ferida,1
+combater o desemprego,1
+comer gato por lebre,-1
+comer o pão que o diabo amassou,-1
+complicar a vida a,1
+comprar gato por lebre,-1
+confundir alhos com bugalhos,-1
+conquistar terreno a,1
+conseguir um grande feito,1
+contentar-se com pouco,-1
+conversa fiada,1
+correr a toque de caixa,-1
+cortar na casaca de,-1
+cortar o pio a,1
+cruzar os braços,-1
+cultura democrática,1
+curto de vistas,-1
+dar à língua,-1
+dar à sola,-1
+dar à soleta,-1
+dar a volta ao miolo,-1
+dar alegrias a,1
+dar ao pé,-1
+dar bandeira,-1
+dar barraca,-1
+dar cabo da vida a,-1
+dar cabo de,1
+dar com a boca no trombone,-1
+dar com a língua nos dentes,-1
+dar com os burros na água,-1
+dar com os pés a,-1
+dar conta do recado,1
+dar de frosques,-1
+dar graxa a,-1
+dar no duro,1
+dar o corpo ao manifesto,-1
+dar o dito por não dito,-1
+dar o golpe a,-1
+dar o golpe do baú,-1
+dar o litro,1
+dar o primeiro passo,1
+dar palmadinhas nas costas a,-1
+dar pontapés na gramática,-1
+dar tiros nos pés,-1
+dar um baile a,1
+dar um banho a,1
+dar um banho de cultura a,1
+dar um pontapé no cu a,-1
+dar um show de bola,1
+dar um tiro no pé,-1
+dar uma banhada a,1
+dar uma coça a,1
+dar uma lição a,1
+dar uma lição de moral a,1
+dar uma malha a,1
+dar uma mãozinha a,1
+dar uma no cravo e outra na ferradura,-1
+dar uma surra a,1
+dar voltas no caixão,-1
+defraudar as expectativas de,-1
+deitar achas na fogueira,-1
+deitar água na fervura,1
+deitar as unhas a,-1
+deitar foguetes antes da festa,-1
+deitar lenha na fogueira,-1
+deitar poeira aos olhos a,-1
+deitar poeira para os olhos de,-1
+deitar tudo a perder,-1
+deitar tudo para trás das costas,-1
+deitar tudo por água abaixo,-1
+deixar com as calças na mão,-1
+deixar com as mãos a abanar,-1
+deixar de rastos,-1
+deixar muito a desejar,-1
+deixar o barco à deriva,-1
+deixar o país de tanga,-1
+deixar tudo para depois,-1
+deixar-se levar,-1
+denegrir a imagem de,0
+denegrir a sua imagem,-1
+depressão maníaca,-1
+desaparecer do mapa,-1
+descer ao mais baixo nível,-1
+descer nas sondagens,-1
+desviar dinheiro,-1
+dever comer farinha maizena,-1
+dever dobrar a língua,-1
+dever ter vergonha na cara,-1
+devoto de Baco,-1
+dificultar a vida a,1
+digno de confiança,1
+direito de contas,1
+dizer a verdade,1
+dizer algumas verdades a,1
+dizer cobras e lagartos de,-1
+dizer mal de,0
+dizer umas quantas verdades a,1
+doido de todo,-1
+doido varrido,-1
+duro da mioleira,-1
+duro de ouvido,-1
+embaraço,-1
+encher as medidas de,1
+encolher os ombros,-1
+encostar à parede,1
+encostar a um canto,1
+encostar às cordas,1
+encostar às tábuas,1
+encostar-se a,-1
+enfiar o barrete,-1
+enfrentar o touro pelos cornos,1
+engolir em seco,-1
+enterrar a cabeça na areia,-1
+entregar a alma ao criador,-1
+entregar a alma ao diabo,-1
+entregar o ouro ao bandido,-1
+entregar-se de corpo e alma,1
+erguer a cabeça,1
+esbanjar dinheiro,-1
+esconder a verdade,-1
+espetar-se ao comprido,-1
+estalar o verniz,-1
+estar à altura de,1
+estar à altura,1
+estar a anos luz de,-1
+estar à beira do precipício,-1
+estar à deriva,-1
+estar a dormir à sombra da bananeira,-1
+estar a dormir,-1
+estar a falar para as paredes,-1
+estar a falar sozinho,-1
+estar a jeito,-1
+estar à nora,-1
+estar a pensar na morte da bezerra,-1
+estar à rasca,-1
+estar à rasquinha,-1
+estar a secar,-1
+estar à sombra da bananeira,-1
+estar aí para as curvas,1
+estar ao deus dará,-1
+estar armado em carapau de corrida,-1
+estar às aranhas,-1
+estar às cegas,-1
+estar às turras com,-1
+estar bem,1
+estar com a cabeça na lua,-1
+estar com a corda ao pescoço,-1
+estar com a corda na garganta,-1
+estar com a corda no pescoço,-1
+estar com a lágrima no canto do olho,-1
+estar com cara de caso,-1
+estar com dor de corno,-1
+estar com dor de cotovelo,-1
+estar com macacos na cabeça,-1
+estar com macacos no sótão,-1
+estar com macaquinhos na cabeça,-1
+estar com macaquinhos no sótão,-1
+estar com o coração nas mãos,-1
+estar com os azeites,-1
+estar com os pés para a cova,-1
+estar com um aperto no coração,-1
+estar de cabeça quente,-1
+estar de mãos a abanar,-1
+estar de mãos atadas,-1
+estar de mãos e pés atados,-1
+estar de molho,-1
+estar de olhos vendados,-1
+estar de pés atados,-1
+estar de saúde,1
+estar de tanga,-1
+estar de trombas,-1
+estar em baixo de forma,-1
+estar em baixo,-1
+estar em grande forma,1
+estar em grande,1
+estar em pedaços,-1
+estar em pele e osso,-1
+estar enterrado até às orelhas,-1
+estar feito ao bife,-1
+estar feito barata tonta,-1
+estar feito com,-1
+estar fora de si,-1
+estar na lua,-1
+estar na retranca,-1
+estar nas mãos de,-1
+estar nas sete quintas,1
+estar no bom caminho,1
+estar num beco sem saída,-1
+estar pelos cabelos,-1
+estar por um fio,-1
+estar sempre a bater na mesma tecla,-1
+estar-se nas tintas,-1
+esticar o pernil,-1
+esvair-se em sangue,-1
+experimentar dificuldades,-1
+falar com convicção,1
+falar de barriga cheia,-1
+falar demais,-1
+falar para as paredes,-1
+falar para o boneco,-1
+falar sem convicção,-1
+falar verdade,1
+faltar à palavra,-1
+faltar ao compromisso,-1
+faltar ao respeito,-1
+fazer à custa de,-1
+fazer a folha a,-1
+fazer asneira,-1
+fazer beicinho,-1
+fazer biquinho,-1
+fazer boa figura,1
+fazer caretas,-1
+fazer com os olhos fechados,1
+fazer com uma perna às costas,1
+fazer das tripas coração,1
+fazer faísca,-1
+fazer figura de urso,-1
+fazer figura triste,-1
+fazer filmes,-1
+fazer gato e sapato de,-1
+fazer horas,-1
+fazer má figura,-1
+fazer orelhas moucas,-1
+fazer ouvidos de mercador,-1
+fazer pouco de,0
+fazer sombra a,1
+fazer um grande feito,1
+fazer um negócio da China,1
+fazer uma boa jogada,1
+fazer uma figura decente,1
+fazer uma jogada de mestre,1
+fazer uma rica parelha,-1
+fazer uma tempestade num copo de água,-1
+fazer vista grossa,-1
+fazer xeque-mate,1
+fazer-se de vítima,-1
+fechar os olhos,-1
+fechar-se em copas,-1
+ferver em pouca água,-1
+ficar a apanhar bonés,-1
+ficar a chupar no dedo,-1
+ficar à deriva,-1
+ficar a dormir à sombra da bananeira,-1
+ficar a falar para as paredes,-1
+ficar a falar sozinho,-1
+ficar a jeito,-1
+ficar à nora,-1
+ficar a pensar na morte da bezerra,-1
+ficar a secar,-1
+ficar à sombra da bananeira,-1
+ficar à sombra de,-1
+ficar a ver navios,-1
+ficar ao deus dará,-1
+ficar aos caídos,-1
+ficar às aranhas,-1
+ficar às cegas,-1
+ficar com a cabeça em água,-1
+ficar com a cabeça na lua,-1
+ficar com as calças na mão,-1
+ficar com cara de caso,-1
+ficar com dor de corno,-1
+ficar com dor de cotovelo,-1
+ficar com macacos na cabeça,-1
+ficar com macacos no sótão,-1
+ficar com macaquinhos na cabeça,-1
+ficar com macaquinhos no sótão,-1
+ficar com o coração nas mãos,-1
+ficar com os louros,-1
+ficar de mãos a abanar,-1
+ficar de mãos atadas,-1
+ficar de mãos e pés atados,-1
+ficar de molho,-1
+ficar de pés atados,-1
+ficar de tanga,-1
+ficar de trombas,-1
+ficar em pedaços,-1
+ficar em primeiro,1
+ficar em último,-1
+ficar enterrado até às orelhas,-1
+ficar feito barata tonta,-1
+ficar fora de si,-1
+ficar mal visto,-1
+ficar na lua,-1
+ficar nas mãos de,-1
+ficar num beco sem saída,-1
+ficar para tio,-1
+ficar pelos cabelos,-1
+ficar reduzido a nada,-1
+ficar reduzido a zero,-1
+ficar sem argumentos,-1
+filho da puta,-1
+fugir à questão,-1
+fugir à responsabilidade,-1
+fugir a sete pés,-1
+fugir ao fisco,-1
+fugir às perguntas,-1
+fugir às responsabilidades,-1
+fugir com o rabo à seringa,-1
+gastar mundos e fundos,-1
+honrar a sua palavra,1
+honrar os seus compromissos,1
+impávido e sereno,0
+induzir em erro,-1
+infernizar a vida a,0
+inspirar, 1
+inspirar confiança,1
+intrépido e sereno,8
+invadir a privacidade de,-1
+ir à luta,1
+ir ao chão,-1
+ir ao tapete,-1
+ir aos arames,-1
+ir às nuvens,1
+ir às paredes,-1
+ir dentro,-1
+ir desta para melhor,-1
+ir para o outro mundo,-1
+ir pelo caminho errado,-1
+ir pelos ares,-1
+ir-se abaixo,-1
+ir-se ao ar,-1
+ir-se aos ares,-1
+jogar ao faz de conta,-1
+juntar o útil ao agradável,1
+lamber as botas a,-1
+laurear a pevide,-1
+lavar roupa suja,-1
+levado da breca,-1
+levado das maleitas,-1
+levado do diabo,-1
+levantar a cabeça,1
+levar a melhor,1
+levar a sua avante,1
+levar com a porta na cara,-1
+levar com um balde de água fria,-1
+levar na corneta,-1
+levar nas orelhas de,-1
+levar nas orelhas,-1
+levar porrada,-1
+levar um baile de,-1
+levar um baile,-1
+levar um banho de água fria,-1
+levar um pontapé no cu,-1
+levar um tiro,-1
+levar uma abada,-1
+levar uma cabazada,-1
+levar uma coça,-1
+levar uma malha,-1
+levar uma surra,-1
+levar uma tareia,-1
+ligar a cassete,-1
+limpar o bom nome,1
+limpar o cebo a,0
+limpar o pó a,0
+limpar o sarampo a,-1
+limpar o sebo a,-1
+má apresentação,-1
+má cara,-1
+má disposição,-1
+má educação,-1
+má fama,-1
+má formação,-1
+má fortuna,-1
+maior e vacinado,0
+mamar nas tetas de,-1
+manchar a imagem de,-1
+mandar bocas a,0
+mandar bocas,-1
+mandar calar,-1
+marcar pontos,1
+más intenções,-1
+matar dois coelhos com uma cajadada,1
+matar o vício,-1
+mau agouro,-1
+mau agrado,-1
+mau aluno,-1
+mau cheiro,-1
+mau comportamento,-1
+mau desempenho,-1
+mau exemplo,-1
+mau feitio,-1
+mau génio,-1
+mau humor,-1
+mau pagador,-1
+maus hábitos,-1
+mentiroso compulsivo,-1
+mentiroso inveterado,-1
+merecer o que tem,-1
+meter a carroça à frente dos bois,-1
+meter a foice em seara alheia,-1
+meter a pata na poça,-1
+meter a viola no saco,-1
+meter água,-1
+meter dentro de um púcaro,1
+meter mãos à obra,1
+meter medo,-1
+meter num bolso,1
+meter num chinelo,1
+meter o carro à frente dos bois,-1
+meter o nariz onde não é chamado,-1
+meter o pé na argola,-1
+meter o pé na poça,-1
+meter o rabinho entre as pernas,-1
+meter o rabo entre as pernas,-1
+meter os cornos a,-1
+meter os dedos pelos olhos de,-1
+meter os dedos pelos olhos dentro,-1
+meter os patins a,-1
+meter os pés pelas mãos,-1
+meter uma cunha,-1
+meter-se às cavalitas de,-1
+meter-se na alheta,-1
+meter-se na boca do lobo,-1
+meter-se numa embrulhada,-1
+meter-se onde não é chamado,-1
+misturar alhos com bugalhos,-1
+morder a língua,-1
+morder o isco,-1
+morrer de pé,-1
+morrer na praia,-1
+mostrar a verdadeira face,-1
+mostrar atitude,1
+mostrar dificuldades,-1
+mudar as regras a meio do jogo,-1
+mudar de ideias como quem muda de camisa,-1
+não acertar uma,-1
+não chegar aos calcanhares de,-1
+não chegar aos pés de,-1
+não chegar às solas dos sapatos de,-1
+não dar uma para a caixa,-1
+não dizer ai nem ui,-1
+não dizer coisa com coisa,-1
+não dizer nada de jeito,-1
+não estar à altura de,-1
+não estar em si,-1
+não fazer a ponta de um corno,-1
+não gostar de ouvir as verdades,-1
+não interessar a ninguém,-1
+não mexer uma palha,-1
+não morrer de amores por,0
+não olhar a meios para atingir os fins,-1
+não olhar a meios,-1
+não perceber patavina,-1
+não saber o que dizer,-1
+não saber o que quer,-1
+não saber onde se meteu,-1
+não saber patavina,-1
+não sair da cepa torta,-1
+não se aprender nada com,
+não se mexer,-1
+não se sair mal,1
+não ser carne nem peixe,-1
+não ser levado a sério,-1
+não ser peixe nem carne,-1
+não ter argumentos,-1
+não ter nada na cabeça,-1
+não ter nada nos miolos,-1
+não ter onde cair morto,-1
+não ter papas na língua,1
+não ter pedalada,-1
+não ter razão,-1
+não ter um pingo de vergonha,-1
+não ter um tostão,-1
+não ter vergonha na cara,-1
+não ter vergonha nenhuma,-1
+não valer nada,-1
+não ver um boi à frente dos olhos,-1
+não ver um boi,-1
+não ver um palmo à frente do nariz,-1
+não virar a cara,1
+nascer com o cu virado para a lua,1
+número de circo,-1
+ocultar a verdade,-1
+olhar nos olhos,1
+ouvir das boas,-1
+ouvir poucas mas boas,-1
+pagar caro,-1
+pagar favores a,-1
+pagar um favor a,-1
+partir o coração a,-1
+passar a batata quente a,-1
+passar à frente a,1
+passar à história,-1
+passar a perna a,-1
+passar cheques em branco,-1
+passar desta para melhor,-1
+passar dos limites,-1
+passar fome,-1
+passar por dificuldades,-1
+pau de cabeleira,-1
+pendurar as botas,-1
+perder a cabeça,-1
+perder a compostura,-1
+perder a postura,-1
+perder a razão,-1
+perder as estribeiras,-1
+perder o juízo,-1
+perder o norte,-1
+perder o pio,-1
+perder os sentidos,-1
+perder terreno,-1
+perturbações de carácter,-1
+perturbações de caráter,-1
+picareta falante,-1
+pisar na bola,-1
+pisar o risco,-1
+pobre coitado,-1
+pobre de espírito,-1
+pobre e mal agradecido,-1
+pobreza de espírito,-1
+ponto fraco,-2
+ponto fraco,-3
+precisar de comer farinha maizena,-1
+pregar aos peixes,-1
+prometer mundos e fundos,-1
+quebrar a promessa eleitoral,-1
+quebrar a promessa,-1
+quebrar as regras do jogo,-1
+quebrar as regras,-1
+queimar tempo,-1
+querer poleiro,-1
+querer tacho,-1
+renascer das cinzas,1
+saber separar as águas,1
+sacudir a água do capote,-1
+sair de cabeça erguida,1
+sair de mãos a abanar,-1
+sair do armário,1
+sair melhor do que a encomenda,-1
+sair o tiro pela culatra,
+sair-se bem,1
+sair-se mal,-1
+saltar para o poleiro,-1
+salvar a honra do convento,1
+seguir o caminho errado,-1
+senhor do seu nariz,0
+sentir dor de corno,-1
+sentir dor de cotovelo,-1
+sentir-se nas nuvens,1
+ser culpa de,
+ser do contra,-1
+ser do mesmo saco,-1
+ser farinha do mesmo saco,-1
+ser mau como as cobras,-1
+ser melhor do que a encomenda,-1
+ser um homem às direitas,1
+ser um zero à esquerda,-1
+ser uma bela prenda,-1
+ser uma cópia mal feita,
+ser uma cópia mal produzida,
+ser vítima de si próprio,-1
+sorriso amarelo,-1
+subir nas sondagens,1
+tarado sexual,-1
+ter a cabeça em água,-1
+ter a cabeça no lugar,1
+ter a consciência pesada,-1
+ter a corda ao pescoço,-1
+ter a faca e o queijo na mão,1
+ter a lágrima ao canto do olho,-1
+ter a razão do seu lado,1
+ter a vida facilitada,1
+ter as costas largas,1
+ter as costas quentes,-1
+ter as horas contadas,-1
+ter boa consciência,1
+ter culpas no cartório,-1
+ter de comer farinha maizena,-1
+ter dois palmos de testa,1
+ter dor de corno,-1
+ter dor de cotovelo,-1
+ter falta de chá,-1
+ter ideias,1
+ter má consciência,-1
+ter macacos na cabeça,-1
+ter macacos no sótão,-1
+ter macaquinhos na cabeça,-1
+ter macaquinhos no sótão,-1
+ter mais olhos que barriga,
+ter mau perder,-1
+ter memória curta,-1
+ter na mão,1
+ter o nariz empinado,-1
+ter o pavio curto,-1
+ter o rei na barriga,-1
+ter os dias contados,-1
+ter os pés assentes no chão,1
+ter os pés bem assentes na terra,1
+ter sentido de justiça,-1
+ter sentido de oportunidade,-1
+ter sentido de responsabilidade,-1
+ter um aperto no coração,-1
+ter uma grande cara de pau,-1
+ter uma grande lata,-1
+tirar a água do capote,-1
+tirar nabos da púcara,-1
+tirar o cavalinho da chuva,-1
+tirar o cavalo da chuva,-1
+tirar partido da situação,-1
+tirar proveito eleitoral,-1
+tomar conta do jogo,1
+tomar partido de,0
+tomar um banho de água fria,-1
+torcer o nariz,-1
+torcer por,0
+trazer água no bico,-1
+trazer nas palminhas das mãos,-1
+trazer o diabo no corpo,-1
+trazer o diabo no ventre,-1
+trazer o rei na barriga,-1
+trocar alhos por bogalhos,-1
+trocar os pés pelas mãos,-1
+trocar-se todo,-1
+truque de magia,-1
+velho e relho,-1
+vender banha da cobra,-1
+vender gato por lebre,-1
+ver a luz ao fundo do túnel,1
+ver a vida a andar para trás,-1
+ver a vidinha a andar para trás,-1
+ver com olhos de ver,1
+violência doméstica,-1
+virar a cabeça a,-1
+virar a casaca,-1
+virar as costas a,-1
+virar o bico ao prego,-1
+voltar à cepa torta,-1
+voltar as costas a,-1
+voltar com a palavra atrás,-1
+votar contra,0
+
