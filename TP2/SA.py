@@ -6,6 +6,11 @@ import matplotlib.pyplot as plt
 import sys
 import spacy
 import nltk
+import spacy
+from spacy.lang.pt.examples import sentences 
+import json
+import numpy as np
+
 load_model = spacy.load("pt_core_news_sm", disable = ['parser','ner'])
 all_stopwords =  nltk.corpus.stopwords.words("portuguese")
 
@@ -30,6 +35,9 @@ df_words = pd.read_csv("SentiLex.csv")
 wordW = df_words['word']
 wordS = df_words['sent']
 
+nlp = spacy.load("pt_core_news_sm")
+bom = nlp("bom")[0]
+mau = nlp("bom")[0]
 
 
 #Função que, sabendo o dataset, extrai o tipo de sentimento associado
@@ -95,35 +103,6 @@ def catch_words(original, new_sentence):
                 general[original][sent]= [wordS[i]]
     return new_sentence  
 
-def diagram():
-    pos = 0
-    neg= 0
-    net = 0
-    for entry in general:
-        if general[entry]['total'] == 'POSITIVO':
-            pos += 1
-        elif general[entry]['total'] == 'NEGATIVO':
-            neg += 1
-        elif general[entry]['total'] == 'NEUTRO':
-            net += 1
-
-
-
-# Pie chart, where the slices will be ordered 
-# and plotted counter-clockwise:
-    labels = 'Positivo', 'Negativo', 'Neutro'
-    sizes = [pos, neg, net]
-
-    distance = 0.2
-    separate = (distance, distance, distance)
-    plt.figure()
-    plt.pie(sizes, labels=labels, explode=separate, autopct='%1.1f%%')
-    # Equal aspect ratio ensures that 
-    # pie is drawn as a circle.
-    plt.axis('equal')  
-    plt.title('Análise de Sentimentos das Notícias do dia')
-    plt.show()
-
 
 def process_Sentiment():
     for entry in general:
@@ -145,7 +124,7 @@ def process_Sentiment():
         elif total_mean== 0:
             SENT ='NEUTRO'
         general[entry]['total'] = SENT
-        general[entry]['valor'] = total_sents
+        general[entry]['valor'] = total_mean
         print(f' 📜 → Para o Título: \n\t"{entry}"\n O sentimento total associado é {total_mean}, ou seja, {SENT}.\n\n')
 
 def tolistString(blocks):
@@ -172,27 +151,34 @@ def remove_mystopwords(text):
         tokens_filtered += [word for word in tokens if not word in all_stopwords]
     return (" ").join(tokens_filtered)
 
+def similarityWords(original, text):
+    doc = nlp(text)
+    for token1 in doc:
+        similaridadeB = token1.similarity(bom)
+        similaridadeM = token1.similarity(mau)
+        v = max([similaridadeB, similaridadeM], key=abs)
+        if v == 0:
+            general[original]['neutro'].append(v)
+        elif v == similaridadeB:
+            general[original]['bom'].append(v)
+        else: 
+            general[original]['mau'].append(v)
+    
+
 
 def analyseSents(file):
     content = open(file, 'r').read()
     blocks = tolistString(content)
     for x in blocks: 
         general[x] = {'bom': [], 'mau': [], 'neutro': [], 'total': '', 'valor': 0.0}
-        #x.text.strip()
         x_lem = lemmatization(x)
         x1 = catch_expressions(x, x_lem)
         x2 = catch_mult(x, x1)
         x_WS = remove_mystopwords(x2)
         x3 = catch_words(x, x_WS)
-    
+        #similarityWords(x, x3)
     return blocks
-    
-    '''
-    diagram()'''
-
-blocksFile = analyseSents(sys.argv[1]) 
-
-process_Sentiment()
+  
 
 def viewComparacao():
     comp = input("Pretende efetuar a comparação de resultados?\n 0 - Não; 1 - Sim\n ")
@@ -203,8 +189,6 @@ def viewComparacao():
         df_words = pd.read_csv('comparacao.csv')
         frase = df_words['frase']
         sentimento = df_words['sentimento']
-        print(frase[0])
-        print(sentimento[0])
         for i in range(len(df_words)):
             if frase[i] in general:
                 if (sentimento[i] ==general[frase[i]]['total'] ):
@@ -213,4 +197,29 @@ def viewComparacao():
                     print("\n 📝 Frase:\n\"", frase[i], "\"\n ➡️ Esperado: "+ sentimento[i]  + "\t↪️ Obtido: " + general[frase[i]]['total'] + " ❌")
         
 
+
+class NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super(NpEncoder, self).default(obj)
+
+
+def writeToJSON():
+    with open("output.json", "w") as outfile:
+        json.dump(general, outfile, cls=NpEncoder)
+
+
+
+
+blocksFile = analyseSents(sys.argv[1]) 
+
+process_Sentiment()
+
 viewComparacao()
+
+writeToJSON()
