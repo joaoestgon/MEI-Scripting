@@ -1,9 +1,6 @@
 
-from cmath import exp
-from netrc import NetrcParseError
 #import requests
 import pandas as pd
-from bs4 import BeautifulSoup
 import re
 import matplotlib.pyplot as plt
 import sys
@@ -130,7 +127,7 @@ def diagram():
 
 def process_Sentiment():
     for entry in general:
-        total = sum(int(v) for v in general[entry]['bom']) + sum(int(v) for v in general[entry]['neutro']) + sum(int(v) for v in general[entry]['mau'])
+        total = sum(int(v) for v in general[entry]['bom']) + sum(int(v) for v in general[entry]['mau'])
         total_sents = (len(general[entry]['bom']+general[entry]['neutro']+general[entry]['mau']))
         total_mean = 0
         pos=0
@@ -178,16 +175,21 @@ def remove_mystopwords(text):
 def analyseSents(file):
     content = open(file, 'r').read()
     blocks = tolistString(content)
+    print(blocks)
     for x in blocks: 
         general[x] = {'bom': [], 'mau': [], 'neutro': [], 'total': ''}
         #x.text.strip()
         x_lem = lemmatization(x)
         x1 = catch_expressions(x, x_lem)
+        print(x1)
         x2 = catch_mult(x, x1)
+        print(x2)
         x_WS = remove_mystopwords(x2)
+        print(x_WS)
         x3 = catch_words(x, x_WS)
  
     process_Sentiment()
+    print(general)
     '''
     diagram()'''
 

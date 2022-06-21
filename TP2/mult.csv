@@ -1,5 +1,5 @@
 word,sentiment
-muito,1
-bocado,1
-pouco,-1
-nada,-1
+muito,2
+bocado,1.5
+pouco,-1.5
+nada,-2
