@@ -33,6 +33,8 @@ import csv
 import re
 import pandas as pd
 
+# Função que procura todas alinhas do SentiLex.csv com espaços [\s]+ e as coloca numa lista de strings
+
 def LerParaLista() :
 
     with open('SentiLex.csv', "r", encoding='utf-8') as file:
@@ -42,6 +44,8 @@ def LerParaLista() :
             if (re.search("[\s]+", row)) :
                 lista.append(row)
         return (lista)
+
+# Gera os csv de Expressões e Palavras
 
 def GerarDocumentos(lista) :
 
@@ -61,14 +65,17 @@ def GerarDocumentos(lista) :
         txt = open('tratado.txt','w', encoding='utf-8')
         
         for row in csv.reader(inp):
-    
+            
+            #Tratamento das linhas para ficar igual ás do .csv
             row = str(row)
             row = re.sub(r'\[|\]', '', row)
             row = re.sub(r'\'', '', row)
             row = re.sub(r', ', ',', row)
 
             flag = 0
-
+            
+            # Se a expressão estiver na lista, não escreve no novo ficheiro, pois flga fica a 1
+            
             for exp in lista :
                 if (exp == row) :
                     flag = 1
