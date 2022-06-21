@@ -66,7 +66,7 @@ def GerarDocumentos(lista) :
         
         for row in csv.reader(inp):
             
-            #Tratamento das linhas para ficar igual ás do .csv
+            #Tratamento das linhas para ficar igual às do .csv
             row = str(row)
             row = re.sub(r'\[|\]', '', row)
             row = re.sub(r'\'', '', row)
