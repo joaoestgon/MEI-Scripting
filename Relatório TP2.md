@@ -23,7 +23,7 @@ Começamos por definir os 3 principais tipos de sentimentos: bom, mau e neutro. 
 
 De seguida, ciramos um dataset adicional com palavras que classificamos como 'MULTIPLICADORAS' (ex.: muito, pouco, ...), visto que estas palavras aumentam ou diminuem o valor do sentimento da palavra que as procede.
 
-Fórmula: [Valor da Palavra Multiplicadora] * [Sentimento da Palavra]
+**Fórmula:** [Valor da Palavra Multiplicadora] x [Sentimento da Palavra]
 
 Como existem expressões cujas palavras individualmente possuem um sentimento diferente de quando estão combinadas numa mesma frase. Por isso, dividimos o dataset de modo a ter um dataset apenas para expressões e outro com todas as palavras individuais do SentiLex.
 De modo a proceder a esta divisão, foram empregados os conhecimentos adquiridos na UC de SPLN, para desenvolver um script que faça essa divisão, visto que manualmente implicaria percorrer todas as entradas do SentiLex, procurar as expressões removê-las e colocá-las noutro dataset.
@@ -66,7 +66,7 @@ def GerarDocumentos(lista) :
         
         for row in csv.reader(inp):
             
-            #Tratamento das linhas para ficar igual ás do .csv
+            #Tratamento das linhas para ficar igual às do .csv
             row = str(row)
             row = re.sub(r'\[|\]', '', row)
             row = re.sub(r'\'', '', row)
@@ -92,3 +92,13 @@ def GerarDocumentos(lista) :
 
 GerarDocumentos(LerParaLista())
 ```
+
+
+Posto isto, e havendo os datasets necessários (SentiLex.csv, exp.csv e mult.csv) para processar os sentimentos associados às palavras em causa, começamos por, efetivamente, desenvolver a solução, seguindo 3 passos:
+* Processamento de Informação
+* Cálculo do Sentimento 
+* Apresentação de resultados gráficos
+
+
+### 3. Tratamento da Informação
+
