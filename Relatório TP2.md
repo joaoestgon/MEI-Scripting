@@ -92,3 +92,9 @@ def GerarDocumentos(lista) :
 
 GerarDocumentos(LerParaLista())
 ```
+
+
+Posto isto, e havendo os datasets necessários (SentiLex.csv, exp.csv e mult.csv) para processar os sentimentos associados às palavras em causa, começamos por, efetivamente, desenvolver a solução, seguindo 3 passos:
+* Processamento de Informação
+* Cálculo do Sentimento 
+* Apresentação de resultados gráficos
