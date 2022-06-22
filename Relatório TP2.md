@@ -98,3 +98,7 @@ Posto isto, e havendo os datasets necessários (SentiLex.csv, exp.csv e mult.csv
 * Processamento de Informação
 * Cálculo do Sentimento 
 * Apresentação de resultados gráficos
+
+
+### 3. Tratamento da Informação
+
