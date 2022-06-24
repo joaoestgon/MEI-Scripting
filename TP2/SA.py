@@ -13,7 +13,6 @@ import numpy as np
 
 load_model = spacy.load("pt_core_news_sm", disable = ['parser','ner'])
 all_stopwords =  nltk.corpus.stopwords.words("portuguese")
-
 general ={}
 
 df_exp = pd.read_csv('exp.csv')
